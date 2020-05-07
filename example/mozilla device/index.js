@@ -17,16 +17,13 @@ const {
   
   class FadeAction extends Action {
     constructor(thing, input) {
-        console.log("action");
       super(uuidv4(), thing, 'fade', input);
     }
   
     performAction() {
       return new Promise((resolve) => {
-        console.log("calisti");
         setTimeout(() => {
           this.thing.setProperty('brightness', this.input.brightness);
-          console.log("calisti");
           this.thing.addEvent(new OverheatedEvent(this.thing, 102));
           resolve();
         }, this.input.duration);
