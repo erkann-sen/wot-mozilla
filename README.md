@@ -4,7 +4,7 @@ A code to make Mozilla WebThing Devices consumeable and useable with node-wot li
 
 ## Get Ready
 * Get the latest node.js
-	```bash
+```bash
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
