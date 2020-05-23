@@ -1,6 +1,6 @@
-# Wot Mozilla 
+# WoT Mozilla 
 
-A code to make Mozilla WebThing Devices consumeable and useable with node-wot library
+A code to make [Mozilla WebThing](https://iot.mozilla.org/framework/) Devices consumeable and useable with [Thingweb node-wot](https://github.com/eclipse/thingweb.node-wot) library
 
 ## Get Ready
 * Get the latest node.js

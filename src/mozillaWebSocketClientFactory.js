@@ -1,6 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var ws_client_1 = require("./mozilla-ws-client");
+
+var ws_client = require("./mozilla-ws-client").default;
 var mozillaWebSocketClientFactory = (function () {
     function mozillaWebSocketClientFactory(connectionUrl) {
         if (connectionUrl === void 0) { connectionUrl = null; }
@@ -10,7 +9,7 @@ var mozillaWebSocketClientFactory = (function () {
     }
     mozillaWebSocketClientFactory.prototype.getClient = function () {
         console.log("WsClientFactory creating client for '" + this.scheme + "'");
-        return new ws_client_1.default(this.connectionUrl);
+        return new ws_client(this.connectionUrl);
     };
     mozillaWebSocketClientFactory.prototype.init = function () {
         return true;

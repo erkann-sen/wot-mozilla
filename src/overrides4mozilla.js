@@ -1,10 +1,10 @@
-var content_serdes_1 = require("@node-wot/core/dist/content-serdes");
+var content_serdes = require("@node-wot/core/dist/content-serdes").default;
 const binding_ws = require("./mozillaWebSocketClientFactory").default;
 
 module.exports = {
     makeChangesToUseMozillaDeviceWithWot: function (td, servient) {
-        //content serdes override
-        content_serdes_1.default.valueToContent = (function (_super) {
+        //content serdes overrides
+        content_serdes.valueToContent = (function (_super) {
             return function () {
                 var obj = arguments[1];
                 // change value to object before converting
@@ -23,9 +23,9 @@ module.exports = {
                 }
                 return _super.apply(this, arguments);
             };
-        })(content_serdes_1.default.valueToContent);
+        })(content_serdes.valueToContent);
 
-        content_serdes_1.default.contentToValue = (function (_super) {
+        content_serdes.contentToValue = (function (_super) {
             return function () {
                 var obj = arguments[1];
                 if (typeof obj != 'undefined' && obj.hasOwnProperty("forms") && obj["forms"][0]["rel"] == "property") {
@@ -45,7 +45,7 @@ module.exports = {
                     return _super.apply(this, arguments);
                 }
             };
-        })(content_serdes_1.default.contentToValue);
+        })(content_serdes.contentToValue);
 
         //small changes in td to make it usable as Wot Device
         renameLinks(td);

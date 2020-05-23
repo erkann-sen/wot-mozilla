@@ -1,13 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+//WebSocket Clients for Mozilla Events
 const WebSocket = require('ws');
-
-var ws;
-
 var events = require('events');
 var eventEmitter = new events.EventEmitter();
 
 var WebSocketClient = (function () {
+    var ws;
     function WebSocketClient(connectionUrl) {
         if (connectionUrl != null) {
             ws = new WebSocket(connectionUrl, "webthing", null);
@@ -95,5 +92,5 @@ var WebSocketClient = (function () {
     };
     return WebSocketClient;
 }());
+
 exports.default = WebSocketClient;
-//# sourceMappingURL=ws-client.js.map
